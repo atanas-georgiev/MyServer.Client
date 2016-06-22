@@ -1,0 +1,168 @@
+﻿<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br/>
+
+<div class="row">
+    <div class="well well-sm">
+        <form class="form-horizontal" novalidate name="registerForm">
+            <fieldset>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <h1 class="well-title">Register</h1>
+                    </div>
+                    <div class="col-md-offset-2 col-md-10">
+                        <h4>Create a new account</h4>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error':registerForm.inputUserMail.$invalid &&
+                                registerForm.inputUserMail.$dirty}">
+                    <label class="col-md-2 control-label" for="inputUserMail">Email</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               id="inputUserMail"
+                               name="inputUserMail"
+                               type="email"
+                               placeholder="Email"
+                               ng-model="vm.user.email"
+                               required />
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="registerForm.inputUserMail.$error.required">
+                            Email is required.
+                        </span>
+                        <span ng-show="registerForm.inputUserMail.$error.email">
+                            Not valid email.
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group"
+                     ng-class="{'has-error':registerForm.inputFirstName.$invalid &&
+                                registerForm.inputFirstName.$dirty}">
+                    <label class="col-md-2 control-label" for="inputFirstName">First Name</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               id="inputFirstName"
+                               name="inputFirstName"
+                               type="text"
+                               placeholder="First Name"
+                               ng-model="vm.user.firstName"
+                               required
+                               ng-minlength="2"
+                               ng-maxlength="50"/>
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="registerForm.inputFirstName.$error.required">
+                            First name is required.
+                        </span>
+                        <span ng-show="registerForm.inputFirstName.$error.minlength">
+                            First name must be at least 2 characters in length.
+                        </span>
+                        <span ng-show="registerForm.inputFirstName.$error.maxlength">
+                            First name cannot exceed 50 characters in length.
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group"
+                     ng-class="{'has-error':registerForm.inputLastName.$invalid &&
+                                registerForm.inputLastName.$dirty}">
+                    <label class="col-md-2 control-label" for="inputLastName">Last Name</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               id="inputLastName"
+                               name="inputLastName"
+                               type="text"
+                               placeholder="Last Name"
+                               ng-model="vm.user.lastName"
+                               required
+                               ng-minlength="2"
+                               ng-maxlength="50"/>
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="registerForm.inputLastName.$error.required">
+                            Last name is required.
+                        </span>
+                        <span ng-show="registerForm.inputLastName.$error.minlength">
+                            Last name must be at least 2 characters in length.
+                        </span>
+                        <span ng-show="registerForm.inputLastName.$error.maxlength">
+                            Last name cannot exceed 50 characters in length.
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group"
+                     ng-class="{'has-error':registerForm.inputPassword.$invalid &&
+                                registerForm.inputPassword.$dirty}">
+                    <label class="col-md-2 control-label" for="inputPassword">Password</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               id="inputPassword"
+                               name="inputPassword"
+                               type="password"
+                               placeholder="Password"
+                               ng-model="vm.user.password"
+                               required
+                               ng-minlength="3"/>
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="registerForm.inputPassword.$error.required">
+                            Password is required.
+                        </span>
+                        <span ng-show="registerForm.inputPassword.$error.minlength">
+                            Password must be at least 3 characters in length.
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group"
+                     ng-class="{'has-error':registerForm.inputConfirmPassword.$invalid &&
+                                registerForm.inputConfirmPassword.$dirty}">
+                    <label class="col-md-2 control-label" for="inputConfirmPassword">Confirm Password</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               id="inputConfirmPassword"
+                               name="inputConfirmPassword"
+                               type="password"
+                               placeholder="Confirm Password"
+                               ng-model="vm.user.confirmPassword"
+                               required
+                               ng-minlength="3" />
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="registerForm.inputConfirmPassword.$error.required">
+                            Confirm Password is required.
+                        </span>
+                        <span ng-show="registerForm.inputConfirmPassword.$error.minlength">
+                            Confirm Password must be at least 3 characters in length.
+                        </span>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-2">
+                        <span>
+                            <button class="btn"
+                                    ng-click="vm.register(vm.user, registerForm)"
+                                    ng-disabled="registerForm.$invalid">
+                                Save
+                            </button>
+                        </span>
+                        <span>
+                            <button class="btn"
+                                    ng-click="vm.cancel(registerForm)">
+                                Cancel
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group"
+                     ng-show="vm.message">
+                    <div class="col-md-6">
+                        <pre style="font: inherit">{{vm.message}}</pre>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>

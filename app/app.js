@@ -25,11 +25,11 @@
                 controller: 'HomeController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
-            //.when('/identity/register', {
-            //    templateUrl: 'partials/identity/register.html',
-            //    controller: 'RegisterController',
-            //    controllerAs: CONTROLLER_VIEW_MODEL_NAME
-            //})
+            .when('/account/register', {
+                templateUrl: 'app/views/account/register.html',
+                controller: 'RegisterController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             //.when('/identity/login', {
             //    templateUrl: 'partials/identity/login.html',
             //    controller: 'LoginController',
@@ -69,5 +69,6 @@
     angular.module('myServerApp', ['ngRoute', 'ngCookies', 'myServerApp.controllers', 'myServerApp.directives'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$http', '$cookies', '$rootScope', '$location', run])
-        .constant('baseUrl', 'http://localhost:9048/');
+        .constant('baseUrl', 'http://localhost:3763/');
+
 }());

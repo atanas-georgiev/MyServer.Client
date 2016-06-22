@@ -2,65 +2,71 @@
 <html>
 <head>
     <title></title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <base href="/" />
-    <link href="Content/bootstrap.css" rel="stylesheet" />
+
+    <!-- Material Design fonts -->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Bootstrap Material Design -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
 </head>
 <body ng-app="myServerApp" ng-cloak>
-    <div class="navbar navbar-default">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-                <a href="#/" class="navbar-brand">Application</a>
-                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a class="navbar-brand" href="/">Home</a>
             </div>
-                <div class="navbar-collapse collapse" id="navbar-main">
+            <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#/partial1">Partial 1</a>
-                    </li>
-                    <li>
-                        <a href="#/partial2">Partial 2</a>
-                    </li>
+                    <li><a href="/ImageGalleryAdmin/Album">Admin</a></li>
+                    <li><a href="/ImageGallery/Album">Albums</a></li>
                 </ul>
-                <div ng-include="'app/views/account/login.html'"></div>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/account/register">Register</a></li>
+                    <li><a href="/Account/Login">Log in</a></li>
+                </ul>
+
             </div>
         </div>
     </div>
-    <div ng-view>
+    <div class="container body-content">
+        <div ng-view>
+        </div>
     </div>
     <hr />
     <footer class="text-center">
+        <button class="btn">Footer</button>
     </footer>
-<hr/>
+    <hr />
 
-<script src="Scripts/jquery-2.2.4.js"></script>
-<script src="Scripts/bootstrap.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
-<script src="Scripts/angular.js"></script>
-<script src="Scripts/angular-route.js"></script>
-<script src="Scripts/angular-cookies.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/material.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/js/ripples.min.js"></script>
 
-<script src="app/app.js"></script>
-<script src="app/controllers/home-controller.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-route.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-cookies.min.js"></script>
 
-<!--<script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/toastr/toastr.min.js"></script>
-    <script src="lib/bootstrap/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-route.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular-cookies.min.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/common/notifier.js"></script>
-    <script src="js/controllers/my-controller1.js"></script>
-    <script src="js/controllers/my-controller2.js"></script>
-    <script src="js/identity/auth.js"></script>
-    <script src="js/identity/authorization.js"></script>
-    <script src="js/identity/identity.js"></script>
-    <script src="js/identity/login-controller.js"></script>
-    <script src="js/identity/register-controller.js"></script>-->
+    <script src="app/app.js"></script>
+    <script src="app/controllers/home/home-controller.js"></script>
+    <script src="app/controllers/account/register-controller.js"></script>
+    <script src="app/services/account/auth-service.js"></script>
+    <script src="app/services/account/identity-service.js"></script>
+
 </body>
 </html>
