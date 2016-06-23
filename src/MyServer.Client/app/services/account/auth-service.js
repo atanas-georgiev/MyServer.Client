@@ -8,7 +8,7 @@
         var register = function register(user) {
             var defered = $q.defer();
 
-            $http.post(baseUrl + 'api/account/register', user)
+            $http.post(baseUrl + 'account/register', user)
                 .then(function () {
                     defered.resolve(true);
                 }, function (err) {
@@ -25,7 +25,7 @@
             var data = "grant_type=password&username=" + (user.username || '') + '&password=' + (user.password || '');
 
             // set header in order to prevent Angular making data to JSON
-            $http.post(baseUrl + 'api/account/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+            $http.post(baseUrl + 'account/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
                 .success(function (response) {
                     var tokenValue = response.access_token; // token for authorized access
 
@@ -53,7 +53,7 @@
         var getIdentity = function () {
             var deferred = $q.defer();
 
-            $http.get(baseUrl + '/api/account/UserInfo')
+            $http.get(baseUrl + 'account/UserInfo')
                 .success(function (identityResponse) {
                     identityResponse.name = identityResponse.firstName + " " + identityResponse.lastName;
 
