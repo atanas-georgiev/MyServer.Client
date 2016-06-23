@@ -69,6 +69,6 @@
     angular.module('myServerApp', ['ngRoute', 'ngCookies', 'myServerApp.controllers', 'myServerApp.directives'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$http', '$cookies', '$rootScope', '$location', run])
-        .constant('baseUrl', 'http://localhost:3763/');
+        .constant('baseUrl', 'http://api.atanas.it/');
 
 }());

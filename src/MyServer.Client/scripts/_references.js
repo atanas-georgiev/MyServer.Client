@@ -7,5 +7,6 @@
 /// <reference path="../app/directives/account/password-verify-directive.js" />
 /// <reference path="../app/services/account/auth-service.js" />
 /// <reference path="../app/services/account/identity-service.js" />
+/// <reference path="ai.0.22.9-build00167.js" />
 /// <reference path="angular.js" />
 /// <reference path="angular-mocks.js" />
