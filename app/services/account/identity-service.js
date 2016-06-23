@@ -1,20 +1,28 @@
 ﻿(function () {
     'use strict';
 
-    var identityService = function identityService($q) {
+    var identityService = function identityService($q, $cookies) {
+        var USER_KEY = 'authentication_data';
+
         var currentUser = {}; // current user if any property exists
         var deferred = $q.defer();
 
         return {
             getUser: function () {
                 if (this.isAuthenticated()) {
+                    var userCookie = $cookies.get(USER_KEY);
+                    if (userCookie) {
+                        currentUser = JSON.parse($cookies.get(USER_KEY));
+                    }
+                    
                     return $q.resolve(currentUser);
                 }
 
                 return deferred.promise;
             },
             isAuthenticated: function () {
-                return Object.getOwnPropertyNames(currentUser).length !== 0;
+                var userCookie = $cookies.get(USER_KEY);
+                return !!userCookie;
             },
             setUser: function (user) {
                 currentUser = user;
@@ -29,5 +37,5 @@
 
     angular
         .module('myServerApp.services')
-        .factory('identity', ['$q', identityService]);
+        .factory('identity', ['$q', '$cookies', identityService]);
 }());

@@ -104,15 +104,16 @@
                                type="password"
                                placeholder="Password"
                                ng-model="vm.user.password"
+                               equals="{{vm.user.confirmPassword}}"
                                required
-                               ng-minlength="3"/>
+                               ng-minlength="6"/>
                     </div>
                     <span class="has-error">
                         <span ng-show="registerForm.inputPassword.$error.required">
                             Password is required.
                         </span>
                         <span ng-show="registerForm.inputPassword.$error.minlength">
-                            Password must be at least 3 characters in length.
+                            Password must be at least 6 characters in length.
                         </span>
                     </span>
                 </div>
@@ -128,14 +129,18 @@
                                placeholder="Confirm Password"
                                ng-model="vm.user.confirmPassword"
                                required
-                               ng-minlength="3" />
+                               equals="{{vm.user.password}}"
+                               ng-minlength="6" />
                     </div>
                     <span class="has-error">
                         <span ng-show="registerForm.inputConfirmPassword.$error.required">
                             Confirm Password is required.
                         </span>
                         <span ng-show="registerForm.inputConfirmPassword.$error.minlength">
-                            Confirm Password must be at least 3 characters in length.
+                            Confirm Password must be at least 6 characters in length.
+                        </span>
+                        <span ng-show="registerForm.inputConfirmPassword.$error.equals">
+                            Passwords do not match.
                         </span>
                     </span>
                 </div>
@@ -146,12 +151,6 @@
                                     ng-click="vm.register(vm.user, registerForm)"
                                     ng-disabled="registerForm.$invalid">
                                 Save
-                            </button>
-                        </span>
-                        <span>
-                            <button class="btn"
-                                    ng-click="vm.cancel(registerForm)">
-                                Cancel
                             </button>
                         </span>
                     </div>

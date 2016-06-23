@@ -7,7 +7,6 @@
 
         vm.register = function (user, registerForm) {
             if (registerForm.$valid) {
-                console.log(user);
                 user.notificationMask = 0;
                 auth.register(user)
                     .then(function () {

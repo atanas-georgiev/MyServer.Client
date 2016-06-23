@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
 </head>
-<body ng-app="myServerApp" ng-cloak>
+<body ng-app="myServerApp" ng-controller="MainController as vm" ng-cloak>
 
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -34,9 +34,22 @@
                     <li><a href="/ImageGallery/Album">Albums</a></li>
                 </ul>
 
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/account/register">Register</a></li>
-                    <li><a href="/Account/Login">Log in</a></li>
+                <ul class="nav navbar-nav navbar-right" ng-if="!vm.globallySetCurrentUser">
+                    <li>
+                        <a href="/account/register">Register</a>
+                    </li>
+                    <li>
+                        <a href="/account/login">Login</a>
+                    </li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right" ng-if="vm.globallySetCurrentUser">
+                    <li>
+                        <a href="/identity/profile">{{vm.globallySetCurrentUser.name}}</a>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="vm.logout()">Logout</a>
+                    </li>
                 </ul>
 
             </div>
@@ -62,11 +75,21 @@
     <script src="https://code.angularjs.org/1.5.7/angular-route.min.js"></script>
     <script src="https://code.angularjs.org/1.5.7/angular-cookies.min.js"></script>
 
-    <script src="app/app.js"></script>
-    <script src="app/controllers/home/home-controller.js"></script>
-    <script src="app/controllers/account/register-controller.js"></script>
-    <script src="app/services/account/auth-service.js"></script>
-    <script src="app/services/account/identity-service.js"></script>
+    <!--Main App-->
+<script src="app/app.js"></script>
+
+    <!--Controllers-->
+<script src="app/controllers/common/main-controller.js"></script>
+<script src="app/controllers/home/home-controller.js"></script>
+<script src="app/controllers/account/register-controller.js"></script>
+<script src="app/controllers/account/login-controller.js"></script>
+
+    <!--Services-->
+<script src="app/services/account/auth-service.js"></script>
+<script src="app/services/account/identity-service.js"></script>
+
+    <!--Directives-->
+<script src="app/directives/account/password-verify-directive.js"></script>
 
 </body>
 </html>

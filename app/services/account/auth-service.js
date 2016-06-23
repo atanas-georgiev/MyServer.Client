@@ -2,7 +2,8 @@
     'use strict';
 
     var authService = function authService($http, $q, $cookies, identity, baseUrl) {
-        var TOKEN_KEY = 'authentication'; // cookie key
+        var TOKEN_KEY = 'authentication_token';
+        var USER_KEY = 'authentication_data';
 
         var register = function register(user) {
             var defered = $q.defer();
@@ -24,7 +25,7 @@
             var data = "grant_type=password&username=" + (user.username || '') + '&password=' + (user.password || '');
 
             // set header in order to prevent Angular making data to JSON
-            $http.post(baseUrl + 'Token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
+            $http.post(baseUrl + 'api/account/token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } })
                 .success(function (response) {
                     var tokenValue = response.access_token; // token for authorized access
 
@@ -52,8 +53,16 @@
         var getIdentity = function () {
             var deferred = $q.defer();
 
-            $http.get(baseUrl + '/api/account/identity')
+            $http.get(baseUrl + '/api/account/UserInfo')
                 .success(function (identityResponse) {
+                    identityResponse.name = identityResponse.firstName + " " + identityResponse.lastName;
+
+                    var theBigDay = new Date();
+                    theBigDay.setHours(theBigDay.getHours() + 72);
+
+                    // save cookie for refresh scenarios
+                    $cookies.put(USER_KEY, JSON.stringify(identityResponse), { expires: theBigDay });
+
                     identity.setUser(identityResponse);
                     deferred.resolve(identityResponse);
                 });
@@ -70,6 +79,7 @@
             },
             logout: function () {
                 $cookies.remove(TOKEN_KEY);
+                $cookies.remove(USER_KEY);
                 $http.defaults.headers.common.Authorization = null;
                 identity.removeUser();
             },

@@ -30,11 +30,11 @@
                 controller: 'RegisterController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
-            //.when('/identity/login', {
-            //    templateUrl: 'partials/identity/login.html',
-            //    controller: 'LoginController',
-            //    controllerAs: CONTROLLER_VIEW_MODEL_NAME
-            //})
+            .when('/account/login', {
+                templateUrl: 'app/views/account/login.html',
+                controller: 'LoginController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             //.when('/cats/add', {
             //    templateUrl: 'partials/cats/add-cat.html',
             //    controller: 'AddCatController',
