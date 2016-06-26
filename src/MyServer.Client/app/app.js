@@ -35,6 +35,11 @@
                 controller: 'LoginController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+            .when('/gallery/albums/add', {
+                templateUrl: 'app/views/image-gallery/add-album.html',
+                controller: 'AddAlbumController',
+                controllerAs: CONTROLLER_VIEW_MODEL_NAME
+            })
             //.when('/cats/add', {
             //    templateUrl: 'partials/cats/add-cat.html',
             //    controller: 'AddCatController',
@@ -69,6 +74,6 @@
     angular.module('myServerApp', ['ngRoute', 'ngCookies', 'myServerApp.controllers', 'myServerApp.directives'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$http', '$cookies', '$rootScope', '$location', run])
-        .constant('baseUrl', 'http://api.atanas.it/');
+        .constant('baseUrl', 'http://localhost:3763/');
 
 }());

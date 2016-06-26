@@ -2,7 +2,8 @@
 <html>
 <head>
     <title></title>
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <base href="/" />
 
     <!-- Material Design fonts -->
@@ -30,8 +31,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/ImageGalleryAdmin/Album">Admin</a></li>
-                    <li><a href="/ImageGallery/Album">Albums</a></li>
+                    <li><a href="/gallery/albums/add">Add album</a></li>                    
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right" ng-if="!vm.globallySetCurrentUser">
@@ -83,10 +83,12 @@
 <script src="app/controllers/home/home-controller.js"></script>
 <script src="app/controllers/account/register-controller.js"></script>
 <script src="app/controllers/account/login-controller.js"></script>
+<script src="app/controllers/image-gallery/add-album-controller.js"></script>
 
     <!--Services-->
 <script src="app/services/account/auth-service.js"></script>
 <script src="app/services/account/identity-service.js"></script>
+<script src="app/services/data/data-service.js"></script>
 
     <!--Directives-->
 <script src="app/directives/account/password-verify-directive.js"></script>
