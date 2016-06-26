@@ -40,6 +40,11 @@
                 controller: 'AddAlbumController',
                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
             })
+             .when('/gallery/albums/:id', {
+                 templateUrl: 'app/views/image-gallery/edit-album.html',
+                 controller: 'EditAlbumController',
+                 controllerAs: CONTROLLER_VIEW_MODEL_NAME
+             })
             //.when('/cats/add', {
             //    templateUrl: 'partials/cats/add-cat.html',
             //    controller: 'AddCatController',
@@ -74,6 +79,6 @@
     angular.module('myServerApp', ['ngRoute', 'ngCookies', 'myServerApp.controllers', 'myServerApp.directives'])
         .config(['$routeProvider', '$locationProvider', config])
         .run(['$http', '$cookies', '$rootScope', '$location', run])
-        .constant('baseUrl', 'http://api.atanas.it/');
+        .constant('baseUrl', 'http://atanas.it/');
 
 }());

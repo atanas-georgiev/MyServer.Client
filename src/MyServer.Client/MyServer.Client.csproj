@@ -95,8 +95,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="app\controllers\image-gallery\add-album-controller.js" />
+    <Content Include="app\controllers\image-gallery\edit-album-controller.js" />
     <Content Include="app\services\data\data-service.js" />
+    <Content Include="app\services\image-gallery\album-service.js" />
     <Content Include="app\views\image-gallery\add-album.html" />
+    <Content Include="app\views\image-gallery\edit-album.html" />
     <Content Include="packages.config" />
     <Content Include="scripts\angular.min.js.map" />
     <None Include="Web.Debug.config">

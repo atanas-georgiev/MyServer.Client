@@ -5,6 +5,7 @@
 /// <reference path="../app/controllers/common/main-controller.js" />
 /// <reference path="../app/controllers/home/home-controller.js" />
 /// <reference path="../app/controllers/image-gallery/add-album-controller.js" />
+/// <reference path="../app/controllers/image-gallery/edit-album-controller.js" />
 /// <reference path="../app/directives/account/password-verify-directive.js" />
 /// <reference path="../app/services/account/auth-service.js" />
 /// <reference path="../app/services/account/identity-service.js" />
