@@ -17,10 +17,15 @@
             return data.get(ALBUMS_API_URL + '/' + id);
         }
 
+        function updateAlbum(id, album) {
+            return data.put(ALBUMS_API_URL + '/' + id, album);
+        }
+
         return {
             addAlbum: addAlbum,
             getAlbums: getAlbums,
-            getAlbumsDetails: getAlbumsDetails
+            getAlbumsDetails: getAlbumsDetails,
+            updateAlbum: updateAlbum
         }
     }
 

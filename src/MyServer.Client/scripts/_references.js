@@ -14,4 +14,5 @@
 /// <reference path="../app/services/image-gallery/album-service.js" />
 /// <reference path="ai.0.22.9-build00167.js" />
 /// <reference path="angular.js" />
+/// <reference path="angular-file-upload.min.js" />
 /// <reference path="angular-mocks.js" />

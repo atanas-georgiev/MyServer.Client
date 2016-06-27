@@ -1,1 +1,107 @@
-﻿<h1>asdadas</h1>
+﻿<hr/>
+<hr /><hr /><hr /><hr /><hr /><hr />
+
+<input type="file" nv-file-select uploader="uploader" multiple/><br />
+<ul>
+    <li ng-repeat="item in uploader.queue">
+        Name: <span ng-bind="item.file.name"></span><br/>
+        <button ng-click="item.upload()">upload</button>
+    </li>
+</ul>
+
+<div class="row">
+    <div class="well well-sm">
+        <form class="form-horizontal" novalidate name="updateAlbumForm">
+            <fieldset>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <h1 class="well-title">Albums</h1>
+                    </div>
+                    <div class="col-md-offset-2 col-md-10">
+                        <h4>Create a new album</h4>
+                    </div>
+                </div>
+                <div class="form-group" ng-class="{'has-error':updateAlbumForm.inputTitle.$invalid &&
+                                updateAlbumForm.inputTitle.$dirty}">
+                    <label class="col-md-2 control-label" for="inputTitle">Title</label>
+                    <div class="col-md-4">
+                        <input class="form-control"
+                               id="inputTitle"
+                               name="inputTitle"
+                               type="text"
+                               placeholder="Title"
+                               ng-model="vm.album.title"
+                               required
+                               ng-minlength="3"
+                               ng-maxlength="200" />
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="updateAlbumForm.inputTitle.$error.required">
+                            Title is required.
+                        </span>
+                        <span ng-show="updateAlbumForm.inputTitle.$error.minlength">
+                            Title must be at least 3 characters in length.
+                        </span>
+                        <span ng-show="updateAlbumForm.inputTitle.$error.maxlength">
+                            Title cannot exceed 200 characters in length.
+                        </span>
+                    </span>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error':updateAlbumForm.inputDesc.$invalid &&
+                                updateAlbumForm.inputDesc.$dirty}">
+                    <label class="col-md-2 control-label" for="inputDesc">Description</label>
+                    <div class="col-md-4">
+                        <textarea class="form-control"
+                                  rows="5"
+                                  id="inputDesc"
+                                  name="inputDesc"
+                                  type="text"
+                                  placeholder="Description"
+                                  ng-model="vm.album.description"
+                                  ng-maxlength="3000"></textarea>
+                    </div>
+                    <span class="has-error">
+                        <span ng-show="updateAlbumForm.inputDesc.$error.maxlength">
+                            Title cannot exceed 3000 characters in length.
+                        </span>
+                    </span>
+                </div>
+
+                <div class="form-group" ng-class="{'has-error':updateAlbumForm.inputAccess.$invalid &&
+                                updateAlbumForm.inputAccess.$dirty}">
+                    <label class="col-md-2 control-label" for="inputAccess">Access</label>
+                    <div class="col-md-4">
+                        <select class="form-control"
+                                id="inputAccess"
+                                name="inputAccess"
+                                placeholder="Access"
+                                ng-model="vm.album.accessType">
+                            <option selected="selected" value="0">Public</option>
+                            <option value="1">Shared</option>
+                            <option value="2">Private</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-4 col-md-offset-2">
+                        <span>
+                            <button class="btn"
+                                    ng-click="vm.updateAlbum(vm.album, updateAlbumForm)"
+                                    ng-disabled="updateAlbumForm.$invalid">
+                                Save
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group"
+                     ng-show="vm.message">
+                    <div class="col-md-6">
+                        <pre style="font: inherit">{{vm.message}}</pre>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
