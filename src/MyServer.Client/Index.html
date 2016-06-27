@@ -2,7 +2,7 @@
 <html>
 <head>
     <title></title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <base href="/" />
 
@@ -16,6 +16,10 @@
     <!-- Bootstrap Material Design -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/bootstrap-material-design.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bootstrap.material-design/0.5.10/css/ripples.min.css">
+
+    <link href="styles/image-picker.css" rel="stylesheet" />
+    <link href="styles/Site.css" rel="stylesheet"/>
+
 </head>
 <body ng-app="myServerApp" ng-controller="MainController as vm" ng-cloak>
 
@@ -31,8 +35,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="/gallery/albums">Albums</a></li>   
-                    <li><a href="/gallery/albums/add">Add album</a></li>                    
+                    <li><a href="/gallery/albums">Albums</a></li>
+                    <li><a href="/gallery/albums/add">Add album</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right" ng-if="!vm.globallySetCurrentUser">
@@ -74,29 +78,32 @@
 
     <script src="https://code.angularjs.org/1.5.7/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.5.7/angular-route.min.js"></script>
-<script src="https://code.angularjs.org/1.5.7/angular-cookies.min.js"></script>
+    <script src="https://code.angularjs.org/1.5.7/angular-cookies.min.js"></script>
     <script src="scripts/angular-file-upload.min.js"></script>
+    <script src="scripts/image-picker.min.js"></script>
+    <script src="scripts/image-details.js"></script>
 
-<!--Main App-->
-<script src="app/app.js"></script>
+    <!--Main App-->
+    <script src="app/app.js"></script>
 
     <!--Controllers-->
-<script src="app/controllers/common/main-controller.js"></script>
-<script src="app/controllers/home/home-controller.js"></script>
-<script src="app/controllers/account/register-controller.js"></script>
-<script src="app/controllers/account/login-controller.js"></script>
-<script src="app/controllers/image-gallery/add-album-controller.js"></script>
-<script src="app/controllers/image-gallery/edit-album-controller.js"></script>
-<script src="app/controllers/image-gallery/list-album-controller.js"></script>
+    <script src="app/controllers/common/main-controller.js"></script>
+    <script src="app/controllers/home/home-controller.js"></script>
+    <script src="app/controllers/account/register-controller.js"></script>
+    <script src="app/controllers/account/login-controller.js"></script>
+    <script src="app/controllers/image-gallery/add-album-controller.js"></script>
+    <script src="app/controllers/image-gallery/edit-album-controller.js"></script>
+    <script src="app/controllers/image-gallery/list-album-controller.js"></script>
 
     <!--Services-->
-<script src="app/services/account/auth-service.js"></script>
-<script src="app/services/account/identity-service.js"></script>
-<script src="app/services/data/data-service.js"></script>
-<script src="app/services/image-gallery/album-service.js"></script>
+    <script src="app/services/account/auth-service.js"></script>
+    <script src="app/services/account/identity-service.js"></script>
+    <script src="app/services/data/data-service.js"></script>
+    <script src="app/services/image-gallery/album-service.js"></script>
 
     <!--Directives-->
-<script src="app/directives/account/password-verify-directive.js"></script>
+    <script src="app/directives/account/password-verify-directive.js"></script>
+    <script src="app/directives/image-picker/image-picker-directive.js"></script>
 
 </body>
 </html>

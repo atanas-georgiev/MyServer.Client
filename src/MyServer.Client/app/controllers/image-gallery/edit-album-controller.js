@@ -1,11 +1,12 @@
 ﻿(function () {
     'use strict';
 
-    function EditAlbumController($scope, $location, $routeParams, FileUploader, auth, albums) {
+    function EditAlbumController($scope, $location, $routeParams, FileUploader, auth, albums, baseUrl) {
         var ALBUMS_API_URL = 'ImageGallery/Album/';
 
         var vm = this;
         var album = {};
+        vm.base = baseUrl;
 
         $scope.uploader = new FileUploader({
             url: 'http://localhost:3763/ImageGallery/Image',
@@ -42,5 +43,5 @@
     }
 
     angular.module('myServerApp.controllers')
-        .controller('EditAlbumController', ['$scope', '$location', '$routeParams', 'FileUploader', 'auth', 'albums', EditAlbumController]);
+        .controller('EditAlbumController', ['$scope', '$location', '$routeParams', 'FileUploader', 'auth', 'albums', 'baseUrl', EditAlbumController]);
 }());

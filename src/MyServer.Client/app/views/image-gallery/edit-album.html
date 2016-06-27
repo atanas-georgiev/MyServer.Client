@@ -33,7 +33,7 @@
                                ng-model="vm.album.title"
                                required
                                ng-minlength="3"
-                               ng-maxlength="200" />
+                               ng-maxlength="200"/>
                     </div>
                     <span class="has-error">
                         <span ng-show="updateAlbumForm.inputTitle.$error.required">
@@ -105,3 +105,15 @@
         </form>
     </div>
 </div>
+
+<select image-picker multiple="multiple" class="image-picker show-html show-labels">
+    <option ng-repeat="image in vm.album.images"
+            data-img-src="{{vm.base + image.lowImageSource}}"
+            data-img-id="{{image.id}}"
+            data-img-title="{{image.title}}"
+            data-img-date="{{image.dateTaken}}"
+            data-img-gps="{{image.gpsName}}"
+            value="{{image.id}}">
+        {{image.info}}
+    </option>
+</select>
