@@ -1,19 +1,22 @@
 ﻿(function () {
     'use strict';
 
-    function EditAlbumController($location, $routeParams, auth, albums) {
+    function ListAlbumController($location, auth, albums, baseUrl) {
         var ALBUMS_API_URL = 'ImageGallery/Album/';
-
         var vm = this;
-        //var album = {};
+        vm.albumsDb = {};
+        vm.server = baseUrl;
 
-        (function () { // init
-            albums.getAlbumsDetails($routeParams.id)
+        (function() { // init
+            albums.getAlbums()
                 .then(function (albumsResponse) {
                     vm.albumsDb = albumsResponse;
                 });
         })();
 
+        
+        //var vm = this;
+        //var album = {};
 
         //vm.addAlbum = function (album, albumForm) {
         //    if (albumForm.$valid) {
@@ -36,5 +39,5 @@
     }
 
     angular.module('myServerApp.controllers')
-        .controller('EditAlbumController', ['$location', '$routeParams', 'auth', 'albums', EditAlbumController]);
+        .controller('ListAlbumController', ['$location', 'auth', 'albums', 'baseUrl', ListAlbumController]);
 }());

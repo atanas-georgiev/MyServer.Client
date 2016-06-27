@@ -9,13 +9,18 @@
             return data.post(ALBUMS_API_URL, album);
         }
 
-        function searchCats(request) {
-            return data.get(ALBUMS_API_URL, request);
+        function getAlbums() {
+            return data.get(ALBUMS_API_URL);
+        }
+
+        function getAlbumsDetails(id) {
+            return data.get(ALBUMS_API_URL + '/' + id);
         }
 
         return {
             addAlbum: addAlbum,
-            searchCats: searchCats
+            getAlbums: getAlbums,
+            getAlbumsDetails: getAlbumsDetails
         }
     }
 

@@ -1,0 +1,15 @@
+﻿<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br />
+<div ng-repeat="album in vm.albumsDb">
+    <a ng-href="/gallery/albums/{{album.id}}">
+        <img ng-src="{{vm.server}}{{album.coverImage}}"/>
+    </a>
+</div>
