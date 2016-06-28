@@ -2,16 +2,13 @@
     'use strict';
 
     function AddAlbumController($location, auth, albums) {
-        var ALBUMS_URL = '/gallery/albums/';
-
         var vm = this;
-        var album = {};
 
         vm.addAlbum = function (album, albumForm) {
             if (albumForm.$valid) {
                 albums.addAlbum(album)
                     .then(function (albumResponse) {
-                        $location.path(ALBUMS_URL + albumResponse.id);
+                        $location.path('/gallery/albums/' + albumResponse.id);
                     },
                     function (response) {
                         vm.message = response.statusText + "\r\n";

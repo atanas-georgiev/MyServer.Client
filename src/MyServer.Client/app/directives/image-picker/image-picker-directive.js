@@ -6,7 +6,7 @@
             restrict: 'A',
             link: function postLink(scope, element, attrs) {
                 $timeout(function() {
-                    $("select").imagepicker();
+                    ImageListUpdate();
                 }, 200);
             }
         }

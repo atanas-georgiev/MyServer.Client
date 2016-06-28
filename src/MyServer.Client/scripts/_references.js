@@ -13,6 +13,7 @@
 /// <reference path="../app/services/account/identity-service.js" />
 /// <reference path="../app/services/data/data-service.js" />
 /// <reference path="../app/services/image-gallery/album-service.js" />
+/// <reference path="../app/services/image-gallery/image-service.js" />
 /// <reference path="ai.0.22.9-build00167.js" />
 /// <reference path="angular.js" />
 /// <reference path="angular-file-upload.min.js" />

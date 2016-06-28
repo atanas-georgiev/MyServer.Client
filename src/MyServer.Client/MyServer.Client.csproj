@@ -97,6 +97,7 @@
     <Content Include="app\controllers\image-gallery\add-album-controller.js" />
     <Content Include="app\controllers\image-gallery\edit-album-controller.js" />
     <Content Include="app\controllers\image-gallery\list-album-controller.js" />
+    <Content Include="app\directives\image-picker\image-picker-directive.js" />
     <Content Include="app\services\data\data-service.js" />
     <Content Include="app\services\image-gallery\album-service.js" />
     <Content Include="app\views\image-gallery\add-album.html" />
@@ -132,6 +133,11 @@
     <Content Include="scripts\angular.js" />
     <Content Include="scripts\angular.min.js" />
     <None Include="scripts\_references.js" />
+    <Content Include="scripts\image-details.js" />
+    <Content Include="scripts\image-picker.min.js" />
+    <Content Include="styles\image-picker.css" />
+    <Content Include="styles\justified-gallery.min.css" />
+    <Content Include="styles\Site.css" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

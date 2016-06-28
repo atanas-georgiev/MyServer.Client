@@ -2,23 +2,22 @@
     'use strict';
 
     function albumService(data) {
-
-        var ALBUMS_API_URL = 'ImageGallery/Album';
+        var albumsApiUrl = 'ImageGallery/Albums';
 
         function addAlbum(album) {
-            return data.post(ALBUMS_API_URL, album);
+            return data.post(albumsApiUrl, album);
         }
 
         function getAlbums() {
-            return data.get(ALBUMS_API_URL);
+            return data.get(albumsApiUrl);
         }
 
         function getAlbumsDetails(id) {
-            return data.get(ALBUMS_API_URL + '/' + id);
+            return data.get(albumsApiUrl + '/' + id);
         }
 
         function updateAlbum(id, album) {
-            return data.put(ALBUMS_API_URL + '/' + id, album);
+            return data.put(albumsApiUrl + '/' + id, album);
         }
 
         return {

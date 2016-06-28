@@ -50,6 +50,10 @@
             return deferred.promise;
         };
 
+        var getToken = function () {
+            return $cookies.get(TOKEN_KEY);
+        }
+
         var getIdentity = function () {
             var deferred = $q.defer();
 
@@ -83,6 +87,7 @@
                 $http.defaults.headers.common.Authorization = null;
                 identity.removeUser();
             },
+            getToken: getToken
         };
     };
 
