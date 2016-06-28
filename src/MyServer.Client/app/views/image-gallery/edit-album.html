@@ -1,6 +1,4 @@
-﻿<hr/>
-
-<div class="well well-sm">
+﻿<div class="well well-sm">
     <div class="row">
 
         <div class="col-md-3">
@@ -74,8 +72,8 @@
     </div>
 </div>
 
-<div class="row">
-    <div class="well well-sm">
+<div class="well well-sm">
+    <div class="row">
         <form class="form-horizontal" novalidate name="updateAlbumForm">
             <fieldset>
                 <div class="form-group" ng-class="{'has-error':updateAlbumForm.inputTitle.$invalid &&
@@ -90,7 +88,7 @@
                                ng-model="vm.album.title"
                                required
                                ng-minlength="3"
-                               ng-maxlength="200"/>
+                               ng-maxlength="200" />
                     </div>
                     <span class="has-error">
                         <span ng-show="updateAlbumForm.inputTitle.$error.required">

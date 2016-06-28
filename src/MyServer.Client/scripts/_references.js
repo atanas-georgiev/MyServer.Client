@@ -20,3 +20,4 @@
 /// <reference path="angular-mocks.js" />
 /// <reference path="image-details.js" />
 /// <reference path="image-picker.min.js" />
+/// <reference path="jquery.justified-gallery.min.js" />

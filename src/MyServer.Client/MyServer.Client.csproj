@@ -94,18 +94,35 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\controllers\image-gallery\add-album-controller.js" />
-    <Content Include="app\controllers\image-gallery\edit-album-controller.js" />
-    <Content Include="app\controllers\image-gallery\list-album-controller.js" />
-    <Content Include="app\directives\image-picker\image-picker-directive.js" />
+    <Content Include="app\controllers\image-gallery\add-album-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\controllers\image-gallery\edit-album-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\controllers\image-gallery\list-album-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\directives\image-picker\image-picker-directive.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="app\services\data\data-service.js" />
-    <Content Include="app\services\image-gallery\album-service.js" />
+    <Content Include="app\services\image-gallery\album-service.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\services\image-gallery\image-service.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="app\views\image-gallery\add-album.html" />
     <Content Include="app\views\image-gallery\edit-album.html" />
     <Content Include="app\views\image-gallery\list-album.html" />
     <Content Include="packages.config" />
-    <Content Include="scripts\angular-file-upload.min.js" />
-    <Content Include="scripts\angular.min.js.map" />
+    <Content Include="scripts\angular-file-upload.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\angular.min.js.map">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -114,27 +131,62 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="app\app.js" />
-    <Content Include="app\controllers\account\login-controller.js" />
-    <Content Include="app\controllers\account\register-controller.js" />
-    <Content Include="app\controllers\common\main-controller.js" />
-    <Content Include="app\controllers\home\home-controller.js" />
+    <Content Include="app\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\controllers\account\login-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\controllers\account\register-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\controllers\common\main-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\controllers\home\home-controller.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="app\directives\account\password-verify-directive.js" />
-    <Content Include="app\services\account\auth-service.js" />
-    <Content Include="app\services\account\identity-service.js" />
+    <Content Include="app\services\account\auth-service.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="app\services\account\identity-service.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="app\views\account\login.html" />
     <Content Include="app\views\account\register.html" />
     <Content Include="app\views\home\home.html" />
     <Content Include="Index.html" />
-    <Content Include="scripts\ai.0.22.9-build00167.js" />
-    <Content Include="scripts\ai.0.22.9-build00167.min.js" />
-    <Content Include="scripts\angular-mocks.js" />
-    <None Include="scripts\angular.intellisense.js" />
-    <Content Include="scripts\angular.js" />
-    <Content Include="scripts\angular.min.js" />
-    <None Include="scripts\_references.js" />
-    <Content Include="scripts\image-details.js" />
-    <Content Include="scripts\image-picker.min.js" />
+    <Content Include="scripts\ai.0.22.9-build00167.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\ai.0.22.9-build00167.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\angular-mocks.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="scripts\angular.intellisense.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="scripts\angular.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\angular.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="scripts\_references.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="scripts\image-details.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\image-picker.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="scripts\jquery.justified-gallery.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="styles\image-picker.css" />
     <Content Include="styles\justified-gallery.min.css" />
     <Content Include="styles\Site.css" />
